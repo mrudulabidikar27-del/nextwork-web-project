@@ -9,7 +9,7 @@ phases:
       - echo Logging in to AWS CodeArtifact...
       - CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain nextwork --domain-owner 372522812133 --region eu-central-1 --query authorizationToken --output text`
       - export CODEARTIFACT_AUTH_TOKEN
-    build:
+  build:
     commands:
       - echo Build started on `date`
       - mvn clean install -s settings.xml
@@ -22,5 +22,3 @@ artifacts:
   files:
     - target/*.war
   discard-paths: no
-
-
